@@ -18,14 +18,18 @@ A flutter based app Project
     
     String name = "Singh";
     
-**$x ,+ is used to concertinate the data type in dart same as + in java *** 
+***$x ,+ is used to concertinate the data type in dart same as + in java *** 
 
-**drawer: Drawer(), // Draker Creates side buttoms , like a menu bottom in the app**
+***drawer: Drawer(), // Draker Creates side buttoms , like a menu bottom in the app***
 
-//Scaffold is to create body designs, Head and body 
+***//Scaffold is to create body designs, Head and body ***
 
-("Let's Hire"), // This will be the Head of the App ,  here We can print name of app or the page name 
+***AppBar for the title of the app***
+
+("Amritian mess"), // This will be the Head of the App ,  here We can print name of app or the page name 
 
 child:Text("Welcome $name Myapp "), //$ string manipulation, ${ } for more than 1 characters
 
-drawer: Drawer(), // Draker Creates side buttoms , like a menu bottom in the app
+***drawer: Drawer(), // Draker Creates side buttoms , like a menu bottom in the app***
+
+***Container keep the records of the alignment of the diffrent widgets***
