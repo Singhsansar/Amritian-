@@ -10,11 +10,11 @@ class Body extends StatelessWidget {
       width: double.infinity,
       child: Stack(
         children: <Widget>[
-          Positioned(
-              child: Image.asset(
-            "assets\\icons\\Amritalogo.png",
-            width: size.width * 0.1, //upload a picture
-          ))
+          //Positioned(
+          // child: Image.asset(
+          //"assets\\icons\\Amritalogo.png",
+          //width: size.width * 0.1, //upload a picture
+          // )//)
         ],
       ),
     );
