@@ -1,6 +1,6 @@
+import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:myfirstflutter/constants.dart';
-import 'package:myfirstflutter/Screens/welcome/welcome_screen.dart';
+import 'Screens/welcome/welcome_screen.dart';
 //import 'package:myfirstflutter/constants.dart';
 
 void main() => runApp(Amrita());
