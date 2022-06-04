@@ -17,13 +17,14 @@ class Background extends StatelessWidget {
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
-              top: 0,
-              left: 50,
-              child: Image.asset(
-                "assets/icons/Amritalogo.png",
-                width: 300, //upload a picture
-                height: 300,
-              )),
+            top: -50,
+            left: 10,
+            child: Image.asset(
+              "assets/icons/Amritalogo.png",
+              width: 380, //upload a picture
+              height: 380,
+            ),
+          ),
           child,
           /*  Positioned(
             top: 50,
