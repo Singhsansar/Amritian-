@@ -1,6 +1,6 @@
 
+import 'package:amritamess/Components/Body.dart';
 import 'package:flutter/material.dart';
-import 'Components/Body.dart';
 
 class welcome_screen extends StatelessWidget {
   @override
