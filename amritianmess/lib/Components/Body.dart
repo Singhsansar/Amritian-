@@ -42,7 +42,6 @@ class Body extends StatelessWidget {
             ),*/
       
                SvgPicture.asset(
-              //Image.asset(
               "assets/icons/mother.svg",
               width: 300,
               height: 200,
