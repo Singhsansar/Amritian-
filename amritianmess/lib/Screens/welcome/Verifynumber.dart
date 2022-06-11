@@ -6,14 +6,16 @@ class Verifynumber extends StatelessWidget
   const Verifynumber({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
+    Size size = MediaQuery.of(context).size;
     return 
     Scaffold(
       appBar: AppBar(
         title: const Text("Number Verification"),
       ),
       body: Container(
-             padding: const EdgeInsets.all(100),
+             padding:  const EdgeInsets.all(60),
              child: Column(children: <Widget>[
                   IntlPhoneField(
                      decoration: InputDecoration(

@@ -30,13 +30,26 @@ class Login extends StatelessWidget
         ),
         child:  Scaffold(
           appBar: AppBar(
-            backgroundColor: const Color.fromARGB(98, 74, 9, 9),
+            //backgroundColor: const Color.fromARGB(98, 74, 9, 9),
             title: const Text("Login"),
           ),
           
           backgroundColor: Colors.transparent,
           body: Stack(
             children: [
+                Container
+                (   
+                    padding: EdgeInsets.only(left:size.width*0.2,top: size.height*0.1),
+                    child: const Text("Welcome to Amrita",
+                    style:TextStyle(
+                    fontSize: 33,
+                    color: Color.fromARGB(255, 83, 23, 23),
+                    fontWeight:FontWeight.bold,
+    
+                  ),
+                  ),
+              ),
+
                      SingleChildScrollView( //for scrolling pages 
                      child: Container(
                       //margin: const EdgeInsets.symmetric(vertical: 8),
@@ -50,7 +63,7 @@ class Login extends StatelessWidget
                               filled: true,
                               hintText: "Email",
                               border:OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),),
+                              borderRadius: BorderRadius.circular(10),),
                               
                             ),
                                    
