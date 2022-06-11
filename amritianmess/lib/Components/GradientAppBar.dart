@@ -1,49 +1,42 @@
 import 'package:flutter/material.dart';
-class Page extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Column(children : <Widget>[GradientAppBar("Custom Gradient App Bar"), Container()],);
-  }
-}
 
+class GardientAppBar extends StatelessWidget
+{
+  final double height;
+  final String text;
 
-class GradientAppBar extends StatelessWidget {
-
-  final String title;
-  final double barHeight = 50.0;
-
-  GradientAppBar(this.title);
+  const GardientAppBar({Key? key,
+  required this.text,
+  required this.height,
+  
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final double statusbarHeight = MediaQuery
-        .of(context)
-        .padding
-        .top;
-
-    return  Container(
-      padding: EdgeInsets.only(top: statusbarHeight),
-      height: statusbarHeight + barHeight,
-      // ignore: sort_child_properties_last
-      child: Center(
-        child: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 20.0, 
-            color: Colors.white, 
-            fontWeight: FontWeight.bold
+  
+    return  Scaffold(
+      backgroundColor: Colors.transparent,
+      appBar: PreferredSize(
+        preferredSize:  Size.fromHeight(height),
+        child: AppBar(
+          flexibleSpace: Container(
+            decoration:  const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomRight,
+                colors:[
+                Colors.deepPurple,
+                Colors.indigo,
+                ] ),
             ),
+          ),
+          title:   Text(text,
+          style: const TextStyle(color: Colors.white),
+          )
         ),
       ),
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-            colors: [Colors.red, Colors.blue],
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(0.5, 0.0),
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp
-        ),
-      ),
+      
     );
   }
+
 }

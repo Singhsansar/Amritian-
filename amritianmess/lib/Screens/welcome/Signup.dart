@@ -1,5 +1,7 @@
 import 'package:amritamess/Components/RoundedBottom.dart';
+import 'package:amritamess/Screens/welcome/Verifynumber.dart';
 import "package:flutter/material.dart";
+import 'package:intl_phone_field/intl_phone_field.dart';
 
 
 // ignore: camel_case_types
@@ -91,19 +93,12 @@ class Signup extends StatelessWidget
                         const SizedBox(
                           height:10,
                         ),
-                        TextField(
-                          //obscureText: true,
-                          //maxLength: 10,
-                              decoration: InputDecoration(
-                              fillColor: Colors.grey.shade100,
-                              filled: true,
-                              hintText: "+91  ",
-                              border:OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),),
-                        ),
-                        ),
+                        // const Countrycode(
+                        //    key: ,
+
+                        // ),
                         const SizedBox(
-                          height:10,
+                          height:3,
                         ),
                         TextField(
                           //obscureText: true,
@@ -139,7 +134,7 @@ class Signup extends StatelessWidget
                             context, 
                             MaterialPageRoute(
                             builder: (context){
-                            return const Signup();
+                            return const Verifynumber();
                   
                       },),);
                  },),

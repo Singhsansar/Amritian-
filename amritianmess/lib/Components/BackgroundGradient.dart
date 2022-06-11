@@ -1,9 +1,9 @@
 //For the Fulll Screen image Background
 import 'package:flutter/material.dart';
-class Background extends StatelessWidget {
+class BackgroundGradient extends StatelessWidget {
   final String image;
   final Widget child;
-  const Background({
+  const BackgroundGradient({
     Key? key,
     required this.image,
     required this.child,
