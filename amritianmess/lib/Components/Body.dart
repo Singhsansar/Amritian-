@@ -1,5 +1,5 @@
-import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/Screens/welcome/Signup.dart';
+import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';
 import 'Background.dart';
@@ -17,17 +17,18 @@ class Body extends StatelessWidget {
     //Size size = MediaQuery.of(context).size;
     // this will rovide the size of the screen that is width and height
     return Background(
+      image: 'assets/icons/AmritaVishwa.jpg',
       child: SingleChildScrollView( //what is this 
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Positioned(
-              top: 0,
+              top: -100,
               left: 100,
               child: Image.asset(
                 "assets/icons/Amritalogo.png",
                 width: 300, //upload a picture
-                height: 200,
+                height: 300,
               ),
             ),
       
@@ -40,9 +41,9 @@ class Body extends StatelessWidget {
               ),
             ),*/
       
-               //SvgPicture.asset(
-              Image.asset(
-              "assets/icons/university.png",
+               SvgPicture.asset(
+              //Image.asset(
+              "assets/icons/mother.svg",
               width: 300,
               height: 200,
             ),
@@ -56,12 +57,12 @@ class Body extends StatelessWidget {
                   context, 
                 MaterialPageRoute(
                   builder: (context){
-                  return Login();
+                  return const Login();
                 },),);
                },//action after clicking login
               
             ),
-            RoundedBottom(
+              RoundedBottom(
                text:"Sign up", 
                textcolour: Colors.black,
                color: kprimarycolor,
@@ -70,7 +71,7 @@ class Body extends StatelessWidget {
                   context, 
                 MaterialPageRoute(
                   builder: (context){
-                  return Signup();
+                  return  const Signup();
                 },),);
                },//action after clicking login
               

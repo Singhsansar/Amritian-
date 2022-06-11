@@ -1,9 +1,11 @@
+//For the Fulll Screen image Background
 import 'package:flutter/material.dart';
-
 class Background extends StatelessWidget {
+  final String image;
   final Widget child;
   const Background({
     Key? key,
+    required this.image,
     required this.child,
   }) : super(key: key);
 
@@ -16,25 +18,18 @@ class Background extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          // Positioned(
-          //   top: -50,
-          //   left: 10,
-          //   child: Image.asset(
-          //     "assets/icons/Amritalogo.png",
-          //     width: 380, //upload a picture
-          //     height: 380,
-          //   ),
-          // ),
-          child,
-          /*  Positioned(
-            top: 50,
-            left: 50,
+          Positioned(
+            top: 0,
+            left: 0,
             child: Image.asset(
-              "assets/icons/Red.jpg",
-              width: 300,
-              height: 300,
+              image,
+              fit: BoxFit.scaleDown,
+              color: const Color.fromRGBO(255, 255, 255, 0.6),
+              colorBlendMode: BlendMode.modulate
+            
             ),
-          ),*/
+          ),
+          child,
         ],
       ),
     );
