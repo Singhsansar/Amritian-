@@ -3,6 +3,7 @@ import 'package:amritamess/Components/RoundedBottom.dart';
 import 'package:amritamess/Components/Textbottom.dart';
 import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/Screens/welcome/Verifynumber.dart';
+import 'package:amritamess/Screens/welcome/Verifyotp.dart';
 import 'package:amritamess/constants.dart';
 import "package:flutter/material.dart";
 

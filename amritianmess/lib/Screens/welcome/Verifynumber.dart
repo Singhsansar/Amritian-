@@ -1,4 +1,5 @@
 import 'package:amritamess/Components/RoundedBottom.dart';
+import 'package:amritamess/Screens/welcome/Verifyotp.dart';
 import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -45,7 +46,7 @@ class Verifynumber extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) {
-                        return const Verifynumber();
+                        return const Verifyotp();
                       },
                     ),
                   );

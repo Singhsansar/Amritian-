@@ -23,7 +23,7 @@ class Background extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   colorFilter: const ColorFilter.mode(
-                      Color.fromRGBO(255, 255, 255, 0.4), BlendMode.lighten),
+                      Color.fromRGBO(255, 255, 255, 0.2), BlendMode.lighten),
                   image: AssetImage(
                     image,
                   ),
