@@ -1,5 +1,6 @@
 //For the Fulll Screen image Background
 import 'package:flutter/material.dart';
+
 class Background extends StatelessWidget {
   final String image;
   final Widget child;
@@ -18,15 +19,16 @@ class Background extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset(
-              image,
-              fit: BoxFit.scaleDown,
-              color: const Color.fromRGBO(255, 255, 255, 0.6),
-              colorBlendMode: BlendMode.modulate
-            
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  colorFilter: const ColorFilter.mode(
+                      Color.fromRGBO(255, 255, 255, 0.4), BlendMode.lighten),
+                  image: AssetImage(
+                    image,
+                  ),
+                  fit: BoxFit.cover),
+              //color: const Color.fromRGBO(255, 255, 255, 0.6),
             ),
           ),
           child,
