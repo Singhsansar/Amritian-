@@ -29,6 +29,7 @@ class SetPassword extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             TextField(
+              obscureText: true,
               //maxLength: 64,
               decoration: InputDecoration(
                 fillColor: Colors.grey.shade100,
@@ -41,6 +42,7 @@ class SetPassword extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             TextField(
+              obscureText: true,
               //maxLength: 64,
               decoration: InputDecoration(
                 fillColor: Colors.grey.shade100,

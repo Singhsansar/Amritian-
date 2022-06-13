@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Screens/welcome/welcome_screen.dart';
+import 'Screens/welcome/welcomescreen.dart';
 import 'constants.dart';
   //import 'package:myfirstflutter/constants.dart';
 
@@ -20,7 +20,7 @@ import 'constants.dart';
           primaryColor: kprimarycolor,
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: welcome_screen(),
+        home: const welcomescreen(),
       );
     }
   }
