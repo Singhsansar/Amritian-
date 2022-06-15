@@ -1,12 +1,12 @@
 import 'package:amritamess/Components/Background.dart';
 import 'package:amritamess/Components/RoundedBottom.dart';
 import 'package:amritamess/Components/Textbottom.dart';
+import 'package:amritamess/Screens/welcome/Homepage.dart';
+import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/Screens/welcome/Signup.dart';
+import 'package:amritamess/Screens/welcome/Verifynumber.dart';
 import 'package:amritamess/constants.dart';
 import "package:flutter/material.dart";
-//import 'package:flutter/painting.dart';
-
-// ignore: camel_case_types
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -90,7 +90,7 @@ class Login extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const Signup();
+                                  return const Homepage();
                                 },
                               ),
                             );
@@ -104,7 +104,7 @@ class Login extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return const Signup();
+                                  return const Verifynumber();
                                 },
                               ),
                             );
@@ -118,7 +118,7 @@ class Login extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const Signup();
+                                    return const Register();
                                   },
                                 ),
                               );

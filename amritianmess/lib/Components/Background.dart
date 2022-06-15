@@ -27,7 +27,7 @@ class Background extends StatelessWidget {
                   image: AssetImage(
                     image,
                   ),
-                  fit: BoxFit.cover),
+                  fit: BoxFit.fill),
               //color: const Color.fromRGBO(255, 255, 255, 0.6),
             ),
           ),

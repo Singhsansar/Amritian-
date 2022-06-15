@@ -1,20 +1,24 @@
 import 'package:amritamess/Components/Background.dart';
+import 'package:amritamess/Components/Dropdown.dart';
 import 'package:amritamess/Components/RoundedBottom.dart';
 import 'package:amritamess/Components/Textbottom.dart';
 import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/Screens/welcome/Verifynumber.dart';
-import 'package:amritamess/Screens/welcome/Verifyotp.dart';
 import 'package:amritamess/constants.dart';
 import "package:flutter/material.dart";
 
 // ignore: camel_case_types
-class Signup extends StatelessWidget {
-  const Signup({Key? key}) : super(key: key);
+class  Register extends StatefulWidget {
+  const Register ({Key? key}) : super(key: key);
 
+  @override
+  State <Register> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    //create a form over here  for the sign up
     return Background(
       image: "assets/icons/AmritaVishwa.jpg",
       // decoration: const BoxDecoration(
@@ -117,20 +121,39 @@ class Signup extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    TextField(
-                      //obscureText: true,
-                      //maxLength: 10,
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        hintText: "Hostel Name",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                    ),
-
-                    RoundedBottom(
+                   const Dropdown(),
+                  //  DropdownButtonHideUnderline(
+                  //   child:DropdownButton<String>
+                  //   (
+                  //     value:currentvalue,
+                  //     isDense: true,
+                  //     onChanged: (String newvalue){
+                  //       setstate(({
+                  //         currentvalue = newvalue;
+                  //         State.didchange(newvalue);
+                  //       });
+                  //       );
+                  //     },
+                  //     items: hostel.map((String value){
+                  //       return DropdownMenuItem<String>(
+                  //         value:value,
+                  //         child: Text(value));
+                  //     }
+                  //      ).toList() )
+                  //  ),
+                    // TextField(
+                    //   //obscureText: true,
+                    //   //maxLength: 10,
+                    //   decoration: InputDecoration(
+                    //     fillColor: Colors.grey.shade100,
+                    //     filled: true,
+                    //     hintText: "Hostel Name",
+                    //     border: OutlineInputBorder(
+                    //       borderRadius: BorderRadius.circular(10),
+                    //     ),
+                    //   ),
+                    // ),
+                   RoundedBottom(
                       text: "Register",
                       textcolour: Colors.black,
                       press: () {
@@ -166,5 +189,5 @@ class Signup extends StatelessWidget {
         ), //Stack and column will be same
       ),
     );
-  }
+  } 
 }
