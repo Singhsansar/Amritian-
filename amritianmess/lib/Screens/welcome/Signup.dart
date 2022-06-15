@@ -1,5 +1,6 @@
 import 'package:amritamess/Components/Background.dart';
-import 'package:amritamess/Components/Dropdown.dart';
+import 'package:amritamess/Components/Dropdownbranch.dart';
+import 'package:amritamess/Components/Dropdownhostel.dart';
 import 'package:amritamess/Components/RoundedBottom.dart';
 import 'package:amritamess/Components/Textbottom.dart';
 import 'package:amritamess/Screens/welcome/Login.dart';
@@ -19,17 +20,7 @@ class _MyStatefulWidgetState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Background(
-      image: "assets/icons/AmritaVishwa.jpg",
-      // decoration: const BoxDecoration(
-      //   image: DecorationImage(
-      //     image: AssetImage(
-      //       "assets/icons/Amrita.jpg",
-      //     ),
-      //     fit: BoxFit.cover,
-      //   ),
-      // ),
-      child: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           backgroundColor: kprimarycolor,
           title: const Text("Register"),
@@ -38,18 +29,6 @@ class _MyStatefulWidgetState extends State<Register> {
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [
-            // Container(
-            //   padding: EdgeInsets.only(
-            //       left: size.width * 0.2, top: size.height * 0.1),
-            //   child: const Text(
-            //     "Welcome to Amrita",
-            //     style: TextStyle(
-            //       fontSize: 33,
-            //       color: Color.fromARGB(255, 83, 23, 23),
-            //       fontWeight: FontWeight.bold,
-            //     ),
-            //   ),
-            // ),
             SingleChildScrollView(
               //for scrolling pages
               child: Container(
@@ -62,7 +41,8 @@ class _MyStatefulWidgetState extends State<Register> {
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: "First Name",
+                        //hintText: "First Name",
+                        labelText: 'Firstname',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -75,9 +55,10 @@ class _MyStatefulWidgetState extends State<Register> {
                       //obscureText: true,
                       //maxLength: 10,
                       decoration: InputDecoration(
+                        labelText: 'Last Name',
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: "Last Name",
+                        //hintText: "Last Name",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -88,9 +69,10 @@ class _MyStatefulWidgetState extends State<Register> {
                     ),
                     TextField(
                       decoration: InputDecoration(
+                        labelText: 'Email id',
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: "Email id",
+                        //hintText: "Email id",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -106,53 +88,16 @@ class _MyStatefulWidgetState extends State<Register> {
                     const SizedBox(
                       height: 3,
                     ),
-                    TextField(
-                      //obscureText: true,
-                      //maxLength: 10,
-                      decoration: InputDecoration(
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        hintText: "Branch",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
+
+                     const Dropdownbranch(),
+                     const SizedBox(
+                      height: 20,
                     ),
-                    const SizedBox(
-                      height: 10,
+                     
+                     const Dropdownhostel(),
+                      const SizedBox(
+                      height: 20,
                     ),
-                   const Dropdown(),
-                  //  DropdownButtonHideUnderline(
-                  //   child:DropdownButton<String>
-                  //   (
-                  //     value:currentvalue,
-                  //     isDense: true,
-                  //     onChanged: (String newvalue){
-                  //       setstate(({
-                  //         currentvalue = newvalue;
-                  //         State.didchange(newvalue);
-                  //       });
-                  //       );
-                  //     },
-                  //     items: hostel.map((String value){
-                  //       return DropdownMenuItem<String>(
-                  //         value:value,
-                  //         child: Text(value));
-                  //     }
-                  //      ).toList() )
-                  //  ),
-                    // TextField(
-                    //   //obscureText: true,
-                    //   //maxLength: 10,
-                    //   decoration: InputDecoration(
-                    //     fillColor: Colors.grey.shade100,
-                    //     filled: true,
-                    //     hintText: "Hostel Name",
-                    //     border: OutlineInputBorder(
-                    //       borderRadius: BorderRadius.circular(10),
-                    //     ),
-                    //   ),
-                    // ),
                    RoundedBottom(
                       text: "Register",
                       textcolour: Colors.black,
@@ -187,7 +132,7 @@ class _MyStatefulWidgetState extends State<Register> {
             ),
           ],
         ), //Stack and column will be same
-      ),
+      
     );
   } 
 }
