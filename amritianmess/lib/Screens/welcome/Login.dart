@@ -2,30 +2,26 @@ import 'package:amritamess/Components/Background.dart';
 import 'package:amritamess/Components/RoundedBottom.dart';
 import 'package:amritamess/Components/Textbottom.dart';
 import 'package:amritamess/Screens/welcome/Homepage.dart';
-import 'package:amritamess/Screens/welcome/Login.dart';
-import 'package:amritamess/Screens/welcome/Signup.dart';
+import 'package:amritamess/Screens/welcome/Register.dart';
 import 'package:amritamess/Screens/welcome/Verifynumber.dart';
 import 'package:amritamess/constants.dart';
 import "package:flutter/material.dart";
-class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+class  Login extends StatefulWidget {
+  const Login ({Key? key}) : super(key: key);
 
-  //const Signup({Key? key}) : super(key: key);
+  @override
+  State <Login> createState() => _MyStatefulWidgetState();
+}
 
+class _MyStatefulWidgetState extends State<Login> {
+    TextEditingController email_controller = TextEditingController();
+    TextEditingController Password_controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     //create a form over here  for the sign up
     return Background(
         image: "assets/icons/AmritaVishwa.jpg",
-        // decoration: const BoxDecoration(
-        //   image: DecorationImage(
-        //     image: AssetImage(
-        //       "assets/icons/Amrita.jpg",
-        //     ),
-        //     fit: BoxFit.cover,
-        //   ),
-        // ),
         child: Scaffold(
             appBar: AppBar(
               //backgroundColor: const Color.fromARGB(98, 74, 9, 9),
@@ -54,7 +50,10 @@ class Login extends StatelessWidget {
                     child: Column(
                       children: [
                         TextField(
+                          controller: email_controller,
+                          keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.email_sharp,color: kprimarycolor,),
                             fillColor: Colors.grey.shade100,
                             filled: true,
                             hintText: "Email",
@@ -69,9 +68,12 @@ class Login extends StatelessWidget {
                           height: 10,
                         ),
                         TextField(
+                          controller: Password_controller,
                           obscureText: true,
-                          //maxLength: 10,
+                          //keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
+                            suffixIcon: const Icon(Icons.remove_red_eye_sharp),
+                            prefixIcon: const Icon(Icons.lock,color: kprimarycolor),
                             fillColor: Colors.grey.shade100,
                             filled: true,
                             hintText: "Password",
@@ -86,6 +88,8 @@ class Login extends StatelessWidget {
                           text: "Login",
                           textcolour: Colors.black,
                           press: () {
+                            var email = email_controller.text;
+                            var Password =Password_controller.text;
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -118,11 +122,11 @@ class Login extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const Register();
+                                    return const Register(); //call system file to perform actions  
                                   },
                                 ),
                               );
-                            }, //action after clicking login
+                            }, //action after clicking Register
                             child: const Text(
                               "Register",
                               style: TextStyle(

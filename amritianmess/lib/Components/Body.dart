@@ -1,4 +1,4 @@
-import 'package:amritamess/Screens/welcome/Signup.dart';
+import 'package:amritamess/Screens/welcome/Register.dart';
 import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';

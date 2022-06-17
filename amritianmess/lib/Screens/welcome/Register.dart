@@ -17,10 +17,18 @@ class  Register extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<Register> {
+     TextEditingController   firstname_controller = TextEditingController();
+     TextEditingController  lastname_controller = TextEditingController();
+     TextEditingController email_controller = TextEditingController();
+     //TextEditingController Branch_controller = TextEditingController();
+     //TextEditingController  Hostel_controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return  Scaffold(
+    return Background(
+      image:"assets/icons/AmritaVishwa.jpg", 
+      child:  Scaffold(
         appBar: AppBar(
           backgroundColor: kprimarycolor,
           title: const Text("Register"),
@@ -38,11 +46,12 @@ class _MyStatefulWidgetState extends State<Register> {
                 child: Column(
                   children: [
                     TextField(
-                      decoration: InputDecoration(
+                        controller: firstname_controller,
+                        decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         //hintText: "First Name",
-                        labelText: 'Firstname',
+                        labelText: 'First Name',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -52,8 +61,7 @@ class _MyStatefulWidgetState extends State<Register> {
                       height: 10,
                     ),
                     TextField(
-                      //obscureText: true,
-                      //maxLength: 10,
+                      controller: lastname_controller,
                       decoration: InputDecoration(
                         labelText: 'Last Name',
                         fillColor: Colors.grey.shade100,
@@ -68,7 +76,12 @@ class _MyStatefulWidgetState extends State<Register> {
                       height: 10,
                     ),
                     TextField(
+                      controller: email_controller,
+                      keyboardType:TextInputType.emailAddress,
                       decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.email,
+                        color: kprimarycolor),
+                        //prefixIconColor: kprimaryLightcolor,
                         labelText: 'Email id',
                         fillColor: Colors.grey.shade100,
                         filled: true,
@@ -78,30 +91,28 @@ class _MyStatefulWidgetState extends State<Register> {
                         ),
                       ),
                     ),
+                   
                     const SizedBox(
-                      height: 10,
-                    ),
-                    // const Countrycode(
-                    //    key: ,
-
-                    // ),
-                    const SizedBox(
-                      height: 3,
+                      height: 15,
                     ),
 
-                     const Dropdownbranch(),
+                     const Dropdownbranch(
+                     ),
                      const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                      
                      const Dropdownhostel(),
                       const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
                    RoundedBottom(
                       text: "Register",
                       textcolour: Colors.black,
                       press: () {
+                         var fname = firstname_controller.text;
+                         var lname =lastname_controller.text;
+                         var email =email_controller.text;
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -133,6 +144,6 @@ class _MyStatefulWidgetState extends State<Register> {
           ],
         ), //Stack and column will be same
       
-    );
+    ));
   } 
 }

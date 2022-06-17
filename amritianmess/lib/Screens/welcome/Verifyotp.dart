@@ -3,8 +3,19 @@ import 'package:amritamess/Screens/welcome/Setpassword.dart';
 import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';
 
-class Verifyotp extends StatelessWidget {
-  const Verifyotp({Key? key}) : super(key: key);
+class  Verifyotp extends StatefulWidget {
+  const Verifyotp ({Key? key}) : super(key: key);
+
+  @override
+  State <Verifyotp> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<Verifyotp> {
+     TextEditingController   firstname_controller = TextEditingController();
+     TextEditingController  lastname_controller = TextEditingController();
+     TextEditingController email_controller = TextEditingController();
+     //TextEditingController Branch_controller = TextEditingController();
+     //TextEditingController  Hostel_controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +75,7 @@ class Verifyotp extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return const SetPassword();
+                            return const Setpassword();
                           },
                         ),
                       );

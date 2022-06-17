@@ -3,13 +3,17 @@ import 'package:amritamess/Screens/welcome/Login.dart';
 import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+class  Homepage extends StatefulWidget {
+  const Homepage ({Key? key}) : super(key: key);
 
+  @override
+  State <Homepage> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    //var account_circle;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Homepage"),

@@ -3,13 +3,21 @@ import 'package:amritamess/Screens/welcome/Homepage.dart';
 import 'package:amritamess/constants.dart';
 import "package:flutter/material.dart";
 
-class SetPassword extends StatelessWidget {
-  const SetPassword({Key? key}) : super(key: key);
+class  Setpassword extends StatefulWidget {
+  const Setpassword ({Key? key}) : super(key: key);
 
+  @override
+  State <Setpassword> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<Setpassword> {
+     TextEditingController   password_controller = TextEditingController();
+     TextEditingController  repassword_controller = TextEditingController();
+     
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
+        return Scaffold(
         appBar: AppBar(
           title: const Text("Choose your password"),
           backgroundColor: kprimarycolor,
@@ -30,7 +38,7 @@ class SetPassword extends StatelessWidget {
             const SizedBox(height: 20),
             TextField(
               obscureText: true,
-              //maxLength: 64,
+              controller: password_controller,
               decoration: InputDecoration(
                 fillColor: Colors.grey.shade100,
                 filled: true,
@@ -43,7 +51,7 @@ class SetPassword extends StatelessWidget {
             const SizedBox(height: 10),
             TextField(
               obscureText: true,
-              //maxLength: 64,
+              controller: repassword_controller,
               decoration: InputDecoration(
                 fillColor: Colors.grey.shade100,
                 filled: true,
@@ -51,14 +59,17 @@ class SetPassword extends StatelessWidget {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-                //contentPadding:
-                //const EdgeInsets.symmetric(vertical: 15),
               ),
             ),
+
             RoundedBottom(
               text: "Save Password",
               textcolour: Colors.black,
               press: () {
+
+                var password = password_controller.text;
+                var repassword_controller = password_controller.text;
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -73,3 +84,4 @@ class SetPassword extends StatelessWidget {
         ));
   }
 }
+
