@@ -13,7 +13,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(
@@ -23,11 +23,11 @@ class Background extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   colorFilter: const ColorFilter.mode(
-                      Color.fromRGBO(255, 255, 255, 0.2), BlendMode.lighten),
+                      Color.fromRGBO(255, 255, 255, 0.6), BlendMode.lighten),
                   image: AssetImage(
                     image,
                   ),
-                  fit: BoxFit.fill),
+                  fit: BoxFit.cover),
               //color: const Color.fromRGBO(255, 255, 255, 0.6),
             ),
           ),

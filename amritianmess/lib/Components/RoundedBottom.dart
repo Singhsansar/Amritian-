@@ -22,7 +22,7 @@ class RoundedBottom extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 0),
       width: size.width * 0.6,
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(30),
         child: ElevatedButton(
             style: ElevatedButton.styleFrom(primary: kprimarycolor),
             //backgroundColor: kprimarycolor,

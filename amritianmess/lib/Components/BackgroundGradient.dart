@@ -1,26 +1,25 @@
 //For the Fulll Screen image Background
 import 'package:flutter/material.dart';
+
 class BackgroundGradient extends StatelessWidget {
-  final String image;
   final Widget child;
   const BackgroundGradient({
     Key? key,
-    required this.image,
     required this.child,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height,
       width: double.infinity,
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
           Container(
-             decoration: const BoxDecoration(
-            gradient: LinearGradient(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               stops: [
@@ -30,14 +29,12 @@ class BackgroundGradient extends StatelessWidget {
                 0.9,
               ],
               colors: [
-                Color.fromARGB(255, 255, 141, 59),
-                Color.fromARGB(255, 54, 117, 244),
-                Colors.indigo,
-                Colors.teal,
+                Color.fromARGB(255, 231, 226, 228),
+                Color.fromARGB(255, 218, 141, 173),
+                Color.fromARGB(255, 236, 231, 233),
+                Color.fromARGB(255, 240, 238, 239),
               ],
-            )
-          ),
-
+            )),
           ),
           // Positioned(
           //   top: 0,
@@ -47,7 +44,7 @@ class BackgroundGradient extends StatelessWidget {
           //     fit: BoxFit.scaleDown,
           //     color: const Color.fromRGBO(255, 255, 255, 0.6),
           //     colorBlendMode: BlendMode.modulate
-            
+
           //   ),
           // ),
           child,

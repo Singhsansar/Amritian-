@@ -28,8 +28,8 @@ class TextBottom extends StatelessWidget {
               text,
               style: TextStyle(
                 color: textcolour,
-                fontWeight: FontWeight.bold,
-                fontSize: fontsiz,
+                fontWeight: FontWeight.w900,
+                fontSize: fontsiz + 2,
               ),
             ),
           ),
