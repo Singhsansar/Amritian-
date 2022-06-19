@@ -19,7 +19,7 @@ class _MyStatefulWidgetState extends State<Setpassword> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-      image: 'assets/icons/AmritaVishwa.jpg',
+      image: 'assets/images/AmritaVishwa.jpg',
       child: Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(

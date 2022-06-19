@@ -15,6 +15,7 @@ class _MyStatefulWidgetState extends State<Homepage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+        backgroundColor: kprimaryLightcolor,
         appBar: AppBar(
           title: const Text("Homepage"),
           backgroundColor: kprimarycolor,
@@ -28,7 +29,7 @@ class _MyStatefulWidgetState extends State<Homepage> {
                 decoration: const BoxDecoration(
                   color: kprimarycolor,
                   shape: BoxShape.rectangle,
-                  //image:  Icon(Icons.camera_enhance),
+                  //image:  Icon(Icons.camera_Draw),
                 ),
                 padding: const EdgeInsets.only(top: 40, left: 2.5),
                 child: Column(
@@ -59,10 +60,10 @@ class _MyStatefulWidgetState extends State<Homepage> {
                 leading: Icon(Icons.home),
                 title: Text("Home"),
               ),
-              const ListTile(
-                leading: Icon(Icons.home),
-                title: Text("Home"),
-              ),
+              // const ListTile(
+              //   leading: Icon(Icons.home),
+              //   title: Text("Home"),
+              // ),
               const ListTile(
                 leading: Icon(Icons.settings),
                 title: Text("Settings"),
@@ -72,6 +73,87 @@ class _MyStatefulWidgetState extends State<Homepage> {
                 title: Text("Logout"),
               )
             ],
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 20),
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/icons/announcement.png"),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/icons/Hostel.png"),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/icons/today.png"),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+                Row(
+                  children: [
+                    IconButton(
+                      //borde
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    ),
+                    IconButton(
+                      iconSize: size.height * 0.2,
+                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         bottomNavigationBar: Theme(
@@ -95,10 +177,6 @@ class _MyStatefulWidgetState extends State<Homepage> {
                   label: 'Business',
                   activeIcon: Login(),
                 ),
-                // BottomNavigationBarItem(
-                //   icon: Icon(Icons.business),
-                //   label: 'Business',
-                // ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.school),
                   label: 'School',

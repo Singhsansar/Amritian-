@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-      image: 'assets/icons/AmritaVishwa.jpg',
+      image: 'assets/images/AmritaVishwa.jpg',
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -23,13 +23,13 @@ class Body extends StatelessWidget {
             top: size.height * 0.5,
             left: 100,
             child: Image.asset(
-              "assets/icons/Amritalogo.png",
+              "assets/images/Amritalogo.png",
               width: 300, //upload a picture
               height: 300,
             ),
           ),
           SvgPicture.asset(
-            "assets/icons/mother.svg",
+            "assets/images/mother.svg",
             width: 200,
             height: size.height * 0.34,
           ),

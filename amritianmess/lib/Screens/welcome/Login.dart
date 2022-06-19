@@ -6,22 +6,23 @@ import 'package:amritamess/Screens/welcome/Register.dart';
 import 'package:amritamess/Screens/welcome/Verifynumber.dart';
 import 'package:amritamess/constants.dart';
 import "package:flutter/material.dart";
-class  Login extends StatefulWidget {
-  const Login ({Key? key}) : super(key: key);
+
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  State <Login> createState() => _MyStatefulWidgetState();
+  State<Login> createState() => _MyStatefulWidgetState();
 }
 
 class _MyStatefulWidgetState extends State<Login> {
-    TextEditingController email_controller = TextEditingController();
-    TextEditingController Password_controller = TextEditingController();
+  TextEditingController email_controller = TextEditingController();
+  TextEditingController Password_controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     //create a form over here  for the sign up
     return Background(
-        image: "assets/icons/AmritaVishwa.jpg",
+        image: "assets/images/AmritaVishwa.jpg",
         child: Scaffold(
             appBar: AppBar(
               //backgroundColor: const Color.fromARGB(98, 74, 9, 9),
@@ -35,7 +36,7 @@ class _MyStatefulWidgetState extends State<Login> {
                   padding: EdgeInsets.only(
                       left: size.width * 0.15, top: size.height * 0.04),
                   child: Image.asset(
-                    "assets/icons/Circularlogo.png",
+                    "assets/images/Circularlogo.png",
                     width: size.width * 0.7,
                     height: size.height * 0.3,
                   ),
@@ -53,7 +54,10 @@ class _MyStatefulWidgetState extends State<Login> {
                           controller: email_controller,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.email_sharp,color: kprimarycolor,),
+                            prefixIcon: const Icon(
+                              Icons.email_sharp,
+                              color: kprimarycolor,
+                            ),
                             fillColor: Colors.grey.shade100,
                             filled: true,
                             hintText: "Email",
@@ -73,7 +77,8 @@ class _MyStatefulWidgetState extends State<Login> {
                           //keyboardType: TextInputType.visiblePassword,
                           decoration: InputDecoration(
                             suffixIcon: const Icon(Icons.remove_red_eye_sharp),
-                            prefixIcon: const Icon(Icons.lock,color: kprimarycolor),
+                            prefixIcon:
+                                const Icon(Icons.lock, color: kprimarycolor),
                             fillColor: Colors.grey.shade100,
                             filled: true,
                             hintText: "Password",
@@ -89,7 +94,7 @@ class _MyStatefulWidgetState extends State<Login> {
                           textcolour: Colors.black,
                           press: () {
                             var email = email_controller.text;
-                            var Password =Password_controller.text;
+                            var Password = Password_controller.text;
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -122,7 +127,7 @@ class _MyStatefulWidgetState extends State<Login> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) {
-                                    return const Register(); //call system file to perform actions  
+                                    return const Register(); //call system file to perform actions
                                   },
                                 ),
                               );

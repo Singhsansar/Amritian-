@@ -27,7 +27,7 @@ class _MyStatefulWidgetState extends State<Register> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Background(
-        image: "assets/icons/AmritaVishwa.jpg",
+        image: "assets/images/AmritaVishwa.jpg",
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: kprimarycolor,
