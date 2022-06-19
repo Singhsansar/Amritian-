@@ -1,5 +1,13 @@
 import 'package:amritamess/Components/Textbottom.dart';
+import 'package:amritamess/Screens/welcome/About.dart';
+import 'package:amritamess/Screens/welcome/Editprofile.dart';
+import 'package:amritamess/Screens/welcome/Hostel.dart';
 import 'package:amritamess/Screens/welcome/Login.dart';
+import 'package:amritamess/Screens/welcome/Mess.dart';
+import 'package:amritamess/Screens/welcome/Note.dart';
+import 'package:amritamess/Screens/welcome/Routine.dart';
+import 'package:amritamess/Screens/welcome/Settings.dart';
+import 'package:amritamess/Screens/welcome/announcement.dart';
 import 'package:amritamess/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +29,7 @@ class _MyStatefulWidgetState extends State<Homepage> {
           backgroundColor: kprimarycolor,
         ),
         drawer: Drawer(
-          width: size.width * 0.5,
+          width: size.width * 0.6,
           child: ListView(
             padding: EdgeInsets.zero,
             children: [
@@ -31,7 +39,7 @@ class _MyStatefulWidgetState extends State<Homepage> {
                   shape: BoxShape.rectangle,
                   //image:  Icon(Icons.camera_Draw),
                 ),
-                padding: const EdgeInsets.only(top: 40, left: 2.5),
+                padding: EdgeInsets.only(top: 40, left: size.width * 0.05),
                 child: Column(
                   children: [
                     Container(
@@ -49,106 +57,216 @@ class _MyStatefulWidgetState extends State<Homepage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) {
-                              return const Login();
+                              return const Profile();
                             }),
                           );
                         })
                   ],
                 ),
               ),
-              const ListTile(
-                leading: Icon(Icons.home),
-                title: Text("Home"),
+              ListTile(
+                leading: IconButton(
+                  color: kprimarycolor,
+                  icon: const Icon(Icons.home),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) {
+                      return const Homepage();
+                    })));
+                  },
+                ),
+                title: const Text("Home"),
               ),
               // const ListTile(
               //   leading: Icon(Icons.home),
               //   title: Text("Home"),
               // ),
-              const ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Settings"),
+              ListTile(
+                leading: IconButton(
+                  color: kprimarycolor,
+                  icon: const Icon(Icons.settings),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) {
+                      return const Setting();
+                    })));
+                  },
+                ),
+                title: const Text("Settings"),
               ),
-              const ListTile(
-                leading: Icon(Icons.logout),
-                title: Text("Logout"),
+              ListTile(
+                leading: IconButton(
+                  color: kprimarycolor,
+                  icon: const Icon(Icons.logout),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: ((context) {
+                      return const Login();
+                    })));
+                  },
+                ),
+                title: const Text("Logout"),
               )
             ],
           ),
         ),
         body: SingleChildScrollView(
           child: Container(
-            margin: const EdgeInsets.symmetric(vertical: 20),
-            padding: const EdgeInsets.all(10),
+            //margin: const EdgeInsets.symmetric(vertical: 20),
+            padding:
+                EdgeInsets.only(left: size.width * 0.06), //main homepage body
             child: Column(
               children: [
                 Row(
                   children: [
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/icons/announcement.png"),
-                      onPressed: () {},
+                    Column(
+                      children: [
+                        IconButton(
+                          //padding: const EdgeInsets.all(10),
+                          iconSize: size.width * 0.35,
+                          icon: Image.asset("assets/icons/announcement1.png"),
+                          tooltip: "Announcement",
+                          focusColor: Colors.blue,
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Announcement();
+                            }));
+                          },
+                        ),
+                        const Text(
+                          "Announcement",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/icons/Hostel.png"),
-                      onPressed: () {},
+                    const SizedBox(
+                      width: 17,
+                    ),
+                    Column(
+                      children: [
+                        IconButton(
+                          iconSize: size.width * 0.42,
+                          icon: Image.asset("assets/icons/food2.png"),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Mess();
+                            }));
+                          },
+                        ),
+                        const Text(
+                          "Mess",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     )
                   ],
                 ),
                 Row(
                   children: [
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/icons/today.png"),
-                      onPressed: () {},
+                    Column(
+                      children: [
+                        IconButton(
+                          iconSize: size.width * 0.42,
+                          icon: Image.asset("assets/icons/Hostel2.png"),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Hostel();
+                            }));
+                          },
+                        ),
+                        const Text(
+                          "Hostel",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
+                    Column(
+                      children: [
+                        IconButton(
+                          iconSize: size.width * 0.42,
+                          icon: Image.asset("assets/icons/routine.png"),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Routine();
+                            }));
+                          },
+                        ),
+                        const Text(
+                          "Routine",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     )
                   ],
                 ),
                 Row(
                   children: [
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
+                    Column(
+                      children: [
+                        IconButton(
+                          iconSize: size.width * 0.4,
+                          icon: Image.asset("assets/icons/todo.png"),
+                          focusColor: Colors.blue,
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const Note();
+                            }));
+                          },
+                        ),
+                        const Text(
+                          "Note",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
+                    Column(
+                      children: [
+                        IconButton(
+                          iconSize: size.height * 0.2,
+                          icon: Image.asset("assets/icons/aboutus.png"),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const About();
+                            }));
+                          },
+                        ),
+                        const Text(
+                          "About",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     )
                   ],
                 ),
                 Row(
                   children: [
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    IconButton(
-                      //borde
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
-                    ),
-                    IconButton(
-                      iconSize: size.height * 0.2,
-                      icon: Image.asset("assets/images/AmritaVishwa.jpg"),
-                      onPressed: () {},
+                    Container(
+                      margin: EdgeInsets.only(left: size.width * 0.45),
+                      child: Column(
+                        children: [
+                          IconButton(
+                            iconSize: size.width * 0.4,
+                            icon: Image.asset("assets/icons/Setting.png"),
+                            focusColor: Colors.blue,
+                            onPressed: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return const Setting();
+                              }));
+                            },
+                          ),
+                          const Text(
+                            "Setting",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -173,8 +291,8 @@ class _MyStatefulWidgetState extends State<Homepage> {
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.business),
-                  label: 'Business',
+                  icon: Icon(Icons.alarm_add_rounded),
+                  label: 'Reminder',
                   activeIcon: Login(),
                 ),
                 BottomNavigationBarItem(

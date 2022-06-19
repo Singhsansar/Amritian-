@@ -37,7 +37,7 @@ class _MyStatefulWidgetState extends State<Verifyotp> {
                     left: size.width * 0.25, top: size.height * 0.03),
                 //margin: const EdgeInsets.symmetric(vertical: 50),
                 child: Image.asset(
-                  "assets/icons/Otpverify.png",
+                  "assets/icons/otpverify.png",
                   width: size.width * 0.4,
                   height: size.height * 0.3,
                 ),
@@ -50,7 +50,7 @@ class _MyStatefulWidgetState extends State<Verifyotp> {
                 child: Column(
                   children: [
                     const Text(
-                      "SMS has been sent to your number\nIf you don't get press Resend ",
+                      "SMS has been sent to your number\n If you don't get press Resend ",
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w900,
